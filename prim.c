@@ -1,7 +1,7 @@
 /*                         Ep1 da disciplina de Grafos                                          */ 
 /* Implementação do Algoritmo de Prim                                                           */
-/* Implementado pelos alunos:Luan Martins, Pedro Furtado, Hayber Gabriel e Lucas Magalhães      */
-/* Data: 21/10/2021									                                            */
+/* Implementado pelos alunos: Luan Martins, Pedro Furtado, Hayber Gabriel e Lucas Magalhães      */
+/* Data: 27/10/2021									                                            */
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -199,7 +199,7 @@ int main(int argc, char **argv){
 
 	if(argumentos.caminhoDoArquivo) criaGrafo(&grafo, argv[1]);
 	else {
-		printf("Insira o caminho do arquivo e pressione Enter: \n");
+		printf("Insira o caminho do arquivo e pressione Enter: ");
 		scanf("%s", nomeArquivo);
 		criaGrafo(&grafo, nomeArquivo);
 	}
