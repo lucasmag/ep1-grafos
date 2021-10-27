@@ -31,8 +31,11 @@ Utilizando o Algoritmo de Kruskal ou o Algoritmo de Prim, seu programa deverá c
 que constituem uma árvore geradora de custo mínimo do grafo. Para o grafo acima, a saída do programa
 poderia ser:
 
+```
 Árvore geradora de custo mínimo: (2, 5) (2, 3) (1, 2) (5, 4)
+
 Custo: 17
+```
 
 ---
 
@@ -48,7 +51,7 @@ Execute o binário e em seguida passe o nome do arquivo:
 
 ```bash
 $./prim
-Insira o caminho do arquivo e pressione Enter: grafo
+Insira o nome do arquivo e pressione Enter: grafo
 
 Árvore geradora de custo mínimo: (1, 2) (2, 5) (2, 3) (5, 4)
 
