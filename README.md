@@ -41,16 +41,16 @@ Custo: 17
 
 ## Rodando a aplicação
 
-Compile o arquivo prim.c:
+Compile o arquivo ep1.c:
 
 ```bash
-gcc prim.c -o prim
+$gcc ep1.c -o ep1
 ```
 
-Execute o binário e em seguida passe o nome do arquivo:
+Execute o binário e passe o nome do arquivo quando for solicitado:
 
 ```bash
-$./prim
+$./ep1
 Insira o nome do arquivo e pressione Enter: grafo
 
 Árvore geradora de custo mínimo: (1, 2) (2, 5) (2, 3) (5, 4)
@@ -60,27 +60,27 @@ Custo: 17
 
 Ao executar podemos passar o nome do arquivo diretamente:
 ```bash
-./prim grafo
+$./ep1 grafo
 ```
+
+> obs.: Em ambos os casos, o arquivo deve estar no mesmo diretório da aplicação.
+
+&nbsp;
 
 Também temos a opção de imprimir a matriz de adjacencias que é criada para o grafo, basta passar a flag `-p`:
 
 ```bash
-$./prim grafo -p
+$./ep1 grafo -p
 
 Matriz de adjacencias:
-         1    2    3    4    5
-    1 9999    5 9999 9999   10
-    2    5 9999    4   13    2
-    3 9999    4 9999    7 9999
-    4 9999   13    7 9999    6
-    5   10    2 9999    6 9999
+        1   2   3   4   5
+    1   -   5   -   -  10
+    2   5   -   4  13   2
+    3   -   4   -   7   -
+    4   -  13   7   -   6
+    5  10   2   -   6   -
 
 Árvore geradora de custo mínimo: (1, 2) (2, 5) (2, 3) (5, 4)
 
 Custo: 17
 ```
-
-
-
-

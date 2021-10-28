@@ -137,7 +137,7 @@ void imprimeMatrizAdjacencias(Grafo *grafo) {
 
     printf("\nMatriz de adjacencias:\n     ");
     for (int k = 1; k <= grafo->numVertices; k++) {
-        printf(" %4d", k);
+        printf(" %3d", k);
     }
 
     printf("\n");
@@ -146,7 +146,10 @@ void imprimeMatrizAdjacencias(Grafo *grafo) {
         for (j = 1; j <= grafo->numVertices; j++) {
             if (j == 1) printf(" %4d", i);
 
-            printf(" %4d", grafo->matrizAdjacencias[i][j]);
+            if(grafo->matrizAdjacencias[i][j] == INFINITO)
+                printf("   -");
+            else
+                printf(" %3d", grafo->matrizAdjacencias[i][j]);
         }
 
         printf("\n");
