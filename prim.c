@@ -110,7 +110,7 @@ void criaGrafo(Grafo *grafo, char filename[]) {
         }
     }
 
-    for (k = 0; k <= vertices + 1; k++) {
+    for (k = 0; k < arestas; k++) {
         fscanf(arquivo, "%d %d %d", &u, &v, &custo);
         grafo->matrizAdjacencias[u][v] = custo;
         grafo->matrizAdjacencias[v][u] = custo;
