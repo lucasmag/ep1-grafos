@@ -17,6 +17,9 @@ typedef struct {
 } Grafo;
 
 void prim(Grafo *grafo) {
+    /* Algoritmo de Prim. 
+    Dado um grafo, imprime as arestas que constituem uma árvore geradora de custo mínimo do grafo. */
+
     int i, j;
     int u = 0, v = 0, x = 0, total = 0;
     int minimo, custoMinimo = 0;
@@ -56,6 +59,9 @@ void prim(Grafo *grafo) {
 }
 
 int **alocaMatriz(int qttVertices) {
+    /* Se houver memória suficiente, aloca espaço para a matriz de adjacências de um grafo com qttVertices vértices.
+    A matriz é criada com 1 linha e 1 coluna a mais, pois não existe vértice 0, portando linha 0 e coluna 0 serão desconsideradas. */
+
     int **M;
     int i;
 
@@ -88,7 +94,11 @@ void liberaGrafo(Grafo *grafo) {
 }
 
 void criaGrafo(Grafo *grafo, char filename[]) {
-    FILE*arquivo;
+    /* Se houver memória suficiente, cria um grafo com n vértices e m arestas.
+     n e m, bem como os pesos para cada aresta são informados através de um arquivo cujo nome deverá ser passado. 
+     O grafo será representado através de uma matriz de adjacências dentro da estrutura 'Grafo'*/
+
+    FILE *arquivo;
 
     int vertices, arestas, i, j, k, u, v, custo;
     arquivo = fopen(filename, "r");
@@ -104,6 +114,7 @@ void criaGrafo(Grafo *grafo, char filename[]) {
 
     grafo->matrizAdjacencias = alocaMatriz(vertices);
 
+    /* Todos os pares de vértices são preechidos com um custo muito alto, o que significa dizer que não existe caminho entre eles. */
     for (i = 0; i <= vertices; i++) {
         for (j = 0; j <= vertices; j++) {
             grafo->matrizAdjacencias[i][j] = INFINITO;
@@ -120,6 +131,8 @@ void criaGrafo(Grafo *grafo, char filename[]) {
 }
 
 void imprimeMatrizAdjacencias(Grafo *grafo) {
+    /* Imprime matriz de adjacencias de um dado grafo. (vértice 0 é desconsiderado) */
+
     int i, j;
 
     printf("\nMatriz de adjacencias:\n     ");
@@ -147,6 +160,9 @@ typedef struct {
 } Args;
 
 Args parsearArgumentos(int argc, char **argv) {
+    /* Função utilitária para checar os argumentos. Ela verifica se o nome do arquivo foi passado e se o grafo deve ser impresso na tela.
+    Retorna uma estrutura 'Args' com duas flags. */
+
     Args argumentos;
 
     argumentos.nomeArquivo = FALSE;
